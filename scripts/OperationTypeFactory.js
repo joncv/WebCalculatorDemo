@@ -117,9 +117,17 @@ var operationFactory = {
 
 //解决浮点数运算不精确问题
 function accurate(a1, a2) {
-    var n1 = 0, n2 = 0, m;
-    n1 = a1.toString().split(".")[1].length;
-    n2 = a2.toString().split(".")[1].length;
+    var n1 = 0, n2 = 0, m = 1;
+    try{
+        n1 = a1.toString().split(".")[1].length;
+    }catch (e){
+
+    }
+    try {
+        n2 = a2.toString().split(".")[1].length;
+    }catch (e){
+
+    }
     m = Math.pow(10, Math.max(n1, n2));
     return m;
 }
