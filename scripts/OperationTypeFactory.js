@@ -9,21 +9,24 @@ var Operation = {
 //各种运算对象
 var Add = {
     get: function (num1, num2) {
-        Operation.result = num1 + num2;
+        accurate(num1, num2)
+        Operation.result = (num1 * m + num2 * m) / m;
     },
     __proto__: Operation
 };
 
 var Sub = {
     get: function (num1, num2) {
-        Operation.result = num1 - num2;
+        accurate(num1, num2);
+        Operation.result = (num1 * m - num2 * m) / m;
     },
     __proto__: Operation
 };
 
 var Multi = {
     get: function (num1, num2) {
-        Operation.result = num1 * num2;
+        accurate(num1, num2);
+        Operation.result = ((num1 * m) * (num2 * m)) / Math.pow(m, 2);
     },
     __proto__: Operation
 };
@@ -34,7 +37,8 @@ var Div = {
             alert("被除数不能为0");
             return;
         }
-        Operation.result = num1 / num2;
+        accurate(num1, num2);
+        Operation.result = ((num1 * m) / (num2 * m)) / Math.pow(m, 2);
     },
     __proto__: Operation
 };
@@ -111,3 +115,11 @@ var operationFactory = {
     },
     __proto__: Operation
 };
+
+//解决浮点数运算不精确问题
+function accurate(a1, a2) {
+    var n1 = 0, n2 = 0, m;
+    n1 = a1.toString().split(".")[1].length;
+    n2 = a2.toString().split(".")[1].length;
+    m = Math.pow(10, Math.max(n1, n2));
+}

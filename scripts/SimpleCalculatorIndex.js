@@ -134,8 +134,10 @@ var Main = {
     getOperation: function (math) {
         //如果Operation.first是小数的话，在输入运算符号之前进行小数化
         if (this.dotFlag) {
-            let mi = this.count - this.dotAddress;
-            this.temp = this.temp * Math.pow(10, -mi);
+            var mi = this.count - this.dotAddress;
+            for (let i = 0; i < mi; i++) {
+                this.temp /= 10;
+            }
             if (this.isFirst) {
                 Operation.first = this.temp;
             }
@@ -183,8 +185,10 @@ var Main = {
     display: function () {
         //如果第二个运算数为小数的话，在此进行小数化
         if (this.dotFlag) {
-            let m = this.count - this.dotAddress;
-            this.temp = this.temp * Math.pow(10, -m);
+            var m = this.count - this.dotAddress;
+            for (let i = 0; i < m; i++) {
+                this.temp /= 10;
+            }
             if (this.isFirst) {
                 Operation.first = this.temp;
             } else {

@@ -31,7 +31,7 @@ This is my first JS project, is a simple calculator, the latter will be a variet
 
 - [ ] 增加科学计算界面
 - [ ] 增加多表达式计算
-- [ ] 解决浮点数不精确的问题
+- [x] 解决浮点数不精确的问题
 - [ ] 运算结果最多显示10位有效数学
 - [ ] 运算符号显示修正
 
