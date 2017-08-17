@@ -10,14 +10,14 @@ var Operation = {
 var Add = {
     get: function (num1, num2) {
         var i = accurate(num1, num2);
-        Operation.result = (num1 * i + num2 * i) / i;
+        Operation.result = ((num1 * i + num2 * i) / i).toFixed(6);
     },
     __proto__: Operation
 };
 var Sub = {
     get: function (num1, num2) {
         var i = accurate(num1, num2);
-        Operation.result = (num1 * i - num2 * i) / i;
+        Operation.result = ((num1 * i - num2 * i) / i).toFixed(6);
     },
     __proto__: Operation
 };
@@ -25,7 +25,7 @@ var Sub = {
 var Multi = {
     get: function (num1, num2) {
         var i = accurate(num1, num2);
-        Operation.result = ((num1 * i) * (num2 * i)) / Math.pow(i, 2);
+        Operation.result = (((num1 * i) * (num2 * i)) / Math.pow(i, 2)).toFixed(6);
     },
     __proto__: Operation
 };
@@ -37,7 +37,7 @@ var Div = {
             return;
         }
         var i = accurate(num1, num2);
-        Operation.result = ((num1 * i) / (num2 * i));
+        Operation.result = (((num1 * i) / (num2 * i))).toFixed(6);
     },
     __proto__: Operation
 };
