@@ -34,6 +34,7 @@ This is my first JS project, is a simple calculator, the latter will be a variet
 - [x] 解决浮点数不精确的问题
 - [ ] 运算结果最多显示10位有效数学
 - [ ] 运算符号显示修正
+- [ ] 实现计算结果自动保存功能
 
 ## 在线预览
 [WebCalculatorDemo](http://barryliu1995.studio/WebCalculatorDemo/index.html)
