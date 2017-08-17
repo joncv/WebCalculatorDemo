@@ -9,24 +9,23 @@ var Operation = {
 //各种运算对象
 var Add = {
     get: function (num1, num2) {
-        accurate(num1, num2)
-        Operation.result = (num1 * m + num2 * m) / m;
+        var i = accurate(num1, num2);
+        Operation.result = (num1 * i + num2 * i) / i;
     },
     __proto__: Operation
 };
-
 var Sub = {
     get: function (num1, num2) {
-        accurate(num1, num2);
-        Operation.result = (num1 * m - num2 * m) / m;
+        var i = accurate(num1, num2);
+        Operation.result = (num1 * i - num2 * i) / i;
     },
     __proto__: Operation
 };
 
 var Multi = {
     get: function (num1, num2) {
-        accurate(num1, num2);
-        Operation.result = ((num1 * m) * (num2 * m)) / Math.pow(m, 2);
+        var i = accurate(num1, num2);
+        Operation.result = ((num1 * i) * (num2 * i)) / Math.pow(i, 2);
     },
     __proto__: Operation
 };
@@ -37,8 +36,8 @@ var Div = {
             alert("被除数不能为0");
             return;
         }
-        accurate(num1, num2);
-        Operation.result = ((num1 * m) / (num2 * m)) / Math.pow(m, 2);
+        var i = accurate(num1, num2);
+        Operation.result = ((num1 * i) / (num2 * i));
     },
     __proto__: Operation
 };
@@ -122,4 +121,5 @@ function accurate(a1, a2) {
     n1 = a1.toString().split(".")[1].length;
     n2 = a2.toString().split(".")[1].length;
     m = Math.pow(10, Math.max(n1, n2));
+    return m;
 }
