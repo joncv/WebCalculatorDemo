@@ -135,12 +135,6 @@ var Main = {
                 Operation.second = this.temp;
             }
         }
-        alert("Operation.first: " + Operation.first);
-        alert("Operation.second: " + Operation.second);
-        alert("isFirst: " + this.isFirst);
-        alert("count: " + this.count);
-        alert("temp: " + this.temp);
-        alert("dotFlag: " + this.dotFlag);
     },
 
     //该函数接受运算符号的输入
